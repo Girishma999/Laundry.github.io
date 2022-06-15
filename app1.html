@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <form method="post" action="appointment.php">
+        <label>Full </label>
+    </form>
+</body>
+
+</html>
+
+<script src="https://cdn01.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+<script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.32868" type="text/javascript"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
+<script src="https://cdn03.jotfor.ms/js/vendor/jquery-1.8.0.min.js?3.3.32868" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/vendor/autoFill.min.js?v=3.3.32868" type="text/javascript"></script>
+<script type="text/javascript">
+    JotForm.newDefaultTheme = false;
+    JotForm.extendsNewTheme = false;
+    JotForm.newPaymentUIForNewCreatedForms = false;
+    JotForm.clearFieldOnHide = "disable";
+
+    JotForm.init(function() {
+        /*INIT-START*/
+        JotForm.description('input_1', 'fill in your name');
+        JotForm.description('input_3', 'enter your valid phone number');
+        setTimeout(function() {
+            $('input_4').hint('ex: myname@example.com');
+        }, 20);
+
+        JotForm.calendarMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        JotForm.calendarDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        JotForm.calendarOther = {
+            "today": "Today"
+        };
+        var languageOptions = document.querySelectorAll('#langList li');
+        for (var langIndex = 0; langIndex < languageOptions.length; langIndex++) {
+            languageOptions[langIndex].on('click', function(e) {
+                setTimeout(function() {
+                    JotForm.setCalendar("9", true, {
+                        "days": {
+                            "monday": true,
+                            "tuesday": true,
+                            "wednesday": true,
+                            "thursday": true,
+                            "friday": true,
+                            "saturday": true,
+                            "sunday": true
+                        },
+                        "future": true,
+                        "past": false,
+                        "custom": false,
+                        "ranges": false,
+                        "start": "",
+                        "end": ""
+                    });
+                }, 0);
+            });
+        }
+        JotForm.onTranslationsFetch(function() {
+            JotForm.setCalendar("9", true, {
+                "days": {
+                    "monday": true,
+                    "tuesday": true,
+                    "wednesday": true,
+                    "thursday": true,
+                    "friday": true,
+                    "saturday": true,
+                    "sunday": true
+                },
+                "future": true,
+                "past": false,
+                "custom": false,
+                "ranges": false,
+                "start": "",
+                "end": ""
+            });
+        });
+        JotForm.description('input_15', 'Select the time. For specific time request, please place a note at the special instruction column.');
+        JotForm.description('input_12', 'You can select one or multiple selection if you have few type of services to be done at once.');
+        if (window.JotForm && JotForm.accessible) $('input_13').setAttribute('tabindex', 0);
+        if (window.JotForm && JotForm.accessible) $('input_14').setAttribute('tabindex', 0);
+        JotForm.alterTexts(undefined);
+        JotForm.isNewSaveAndContinueLaterActive = true;
+        /*INIT-END*/
+    });
+
+    JotForm.prepareCalculationsOnTheFly([null, {
+        "description": "fill in your name",
+        "name": "fullName",
+        "qid": "1",
+        "text": "Full Name",
+        "type": "control_fullname"
+    }, {
+        "name": "submit",
+        "qid": "2",
+        "text": "Submit Request",
+        "type": "control_button"
+    }, {
+        "description": "enter your valid phone number",
+        "name": "phoneNumber3",
+        "qid": "3",
+        "text": "Phone Number",
+        "type": "control_phone"
+    }, {
+        "name": "email",
+        "qid": "4",
+        "text": "E-mail",
+        "type": "control_email"
+    }, {
+        "name": "address",
+        "qid": "5",
+        "text": "Address",
+        "type": "control_address"
+    }, {
+        "name": "clickTo",
+        "qid": "6",
+        "text": "Laundry Pickup Request Form",
+        "type": "control_head"
+    }, {
+        "name": "doubleclickTo",
+        "qid": "7",
+        "text": "Our customer service representative will contact you within one (1) hour from the time of your submission for order confirmation.",
+        "type": "control_text"
+    }, {
+        "name": "doubleclickTo8",
+        "qid": "8",
+        "text": "Please select your preferred pickup date &amp; time. Your request for the current date must be made at least three (3) hours in advance for us to arrange the logistic.",
+        "type": "control_text"
+    }, {
+        "name": "pleaseSelect",
+        "qid": "9",
+        "text": "Please select your pickup date",
+        "type": "control_datetime"
+    }, {
+        "name": "doubleclickTo10",
+        "qid": "10",
+        "text": "Please fill in the details of the service required and any special instructions needed attention.",
+        "type": "control_text"
+    }, null, {
+        "description": "You can select one or multiple selection if you have few type of services to be done at once.",
+        "name": "input12",
+        "qid": "12",
+        "text": "Select type of service (s) required",
+        "type": "control_checkbox"
+    }, {
+        "name": "detailsOf",
+        "qid": "13",
+        "text": "Details of service request",
+        "type": "control_textarea"
+    }, {
+        "name": "anySpecial",
+        "qid": "14",
+        "text": "Any special instructions",
+        "type": "control_textbox"
+    }, {
+        "description": "Select the time. For specific time request, please place a note at the special instruction column.",
+        "name": "selectYour",
+        "qid": "15",
+        "text": "Select your preferred time for pickup",
+        "type": "control_dropdown"
+    }]);
+    setTimeout(function() {
+        JotForm.paymentExtrasOnTheFly([null, {
+            "description": "fill in your name",
+            "name": "fullName",
+            "qid": "1",
+            "text": "Full Name",
+            "type": "control_fullname"
+        }, {
+            "name": "submit",
+            "qid": "2",
+            "text": "Submit Request",
+            "type": "control_button"
+        }, {
+            "description": "enter your valid phone number",
+            "name": "phoneNumber3",
+            "qid": "3",
+            "text": "Phone Number",
+            "type": "control_phone"
+        }, {
+            "name": "email",
+            "qid": "4",
+            "text": "E-mail",
+            "type": "control_email"
+        }, {
+            "name": "address",
+            "qid": "5",
+            "text": "Address",
+            "type": "control_address"
+        }, {
+            "name": "clickTo",
+            "qid": "6",
+            "text": "Laundry Pickup Request Form",
+            "type": "control_head"
+        }, {
+            "name": "doubleclickTo",
+            "qid": "7",
+            "text": "Our customer service representative will contact you within one (1) hour from the time of your submission for order confirmation.",
+            "type": "control_text"
+        }, {
+            "name": "doubleclickTo8",
+            "qid": "8",
+            "text": "Please select your preferred pickup date &amp; time. Your request for the current date must be made at least three (3) hours in advance for us to arrange the logistic.",
+            "type": "control_text"
+        }, {
+            "name": "pleaseSelect",
+            "qid": "9",
+            "text": "Please select your pickup date",
+            "type": "control_datetime"
+        }, {
+            "name": "doubleclickTo10",
+            "qid": "10",
+            "text": "Please fill in the details of the service required and any special instructions needed attention.",
+            "type": "control_text"
+        }, null, {
+            "description": "You can select one or multiple selection if you have few type of services to be done at once.",
+            "name": "input12",
+            "qid": "12",
+            "text": "Select type of service (s) required",
+            "type": "control_checkbox"
+        }, {
+            "name": "detailsOf",
+            "qid": "13",
+            "text": "Details of service request",
+            "type": "control_textarea"
+        }, {
+            "name": "anySpecial",
+            "qid": "14",
+            "text": "Any special instructions",
+            "type": "control_textbox"
+        }, {
+            "description": "Select the time. For specific time request, please place a note at the special instruction column.",
+            "name": "selectYour",
+            "qid": "15",
+            "text": "Select your preferred time for pickup",
+            "type": "control_dropdown"
+        }]);
+    }, 20);
+</script>
